@@ -157,3 +157,24 @@ create table application.order_itmes
 );
 
 
+create table application.content
+(
+	id serial primary key,
+	name varchar(10) null,
+	file_url varchar(255) not null,
+	content_type_id not null references info.info_content_type(id),
+	created_date timestamp without time zone,
+	updated_date date,
+);
+
+
+create table info.info_content_type
+(
+	id serial primary key,
+	full_name varchar(30) not null,
+	short_name varchar(10) not null,
+	code integer not null, 
+
+	created_date timestamp without time zone,
+	updated_date date,
+);
