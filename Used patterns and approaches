@@ -1,0 +1,3 @@
+Loyihada ishlatgan pattern va approachlar:
+1.  Auditable Entity Pattern => Aksariyat entitylarda CreatedDate, UpdatedDate bo‘ladi. Buni BaseEntityga olib chiqamiz;
+2.  Value Objects => Agar ma'lumotlar birga ishlatilsa, ularni bir klassga jamlash;
