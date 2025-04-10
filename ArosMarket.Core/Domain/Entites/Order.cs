@@ -10,7 +10,6 @@ public class Order : Auditable
     [Column("id")]
     public int Id { get; set; }
 
-
     [Required]
     [Column("total_amount")]
     public decimal TotalAmount { get; set; }
@@ -18,6 +17,4 @@ public class Order : Auditable
     [Required]
     [Column("user_id")]
     public Guid UserId { get; set; }
-
-
 }

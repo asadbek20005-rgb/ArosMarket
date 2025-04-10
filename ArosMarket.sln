@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArosMarket.Core", "ArosMark
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArosMarket.Infrastructure", "ArosMarket.Infrastructure\ArosMarket.Infrastructure.csproj", "{2F50FD43-0DF9-4D65-9620-BC6AB0ED8B19}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{A9583E9A-B6FB-4C2F-B846-57BB3431BF08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Test", "Api.Test\Api.Test.csproj", "{D8B35D3C-968F-47CA-875E-24215E2E0C23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,10 @@ Global
 		{2F50FD43-0DF9-4D65-9620-BC6AB0ED8B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F50FD43-0DF9-4D65-9620-BC6AB0ED8B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F50FD43-0DF9-4D65-9620-BC6AB0ED8B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B35D3C-968F-47CA-875E-24215E2E0C23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B35D3C-968F-47CA-875E-24215E2E0C23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B35D3C-968F-47CA-875E-24215E2E0C23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B35D3C-968F-47CA-875E-24215E2E0C23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{3AD0B71E-9BCA-4DE6-9B65-7A461E66E09A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{2F50FD43-0DF9-4D65-9620-BC6AB0ED8B19} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D8B35D3C-968F-47CA-875E-24215E2E0C23} = {A9583E9A-B6FB-4C2F-B846-57BB3431BF08}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8781DA38-3D60-4045-AA18-F45E5CDCA537}

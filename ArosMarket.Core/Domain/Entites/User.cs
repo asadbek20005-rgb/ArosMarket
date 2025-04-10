@@ -36,4 +36,16 @@ public class User : Auditable
     [Column("user_status_id")]
     public int StatusId { get; set; }
 
+
+
+
+    [ForeignKey(nameof(RoleId))]
+    public Role? Role { get; set; }
+
+    [ForeignKey(nameof(StatusId))]
+    public UserStatus? Status { get; set; }
+
+    [ForeignKey(nameof(GenderId))]
+    public Gender? Gender { get; set; }
+
 }

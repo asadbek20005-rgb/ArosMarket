@@ -29,4 +29,7 @@ public class Product : BaseEntity.BaseEntity
     public int ProductStatusId { get; set; }
 
 
+
+    [ForeignKey(nameof(ProductTypeId))]
+    public ProductType? ProductType { get; set; }
 }
