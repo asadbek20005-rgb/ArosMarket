@@ -8,6 +8,7 @@ using ArosMarket.Core.Validators;
 using ArosMarket.Infrastructure.DbContext;
 using ArosMarket.Infrastructure.Repositories;
 using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IBaseRepository<ProductType>, BaseRepository<ProductT
 builder.Services.AddScoped<IBaseRepository<ProductStatus>, BaseRepository<ProductStatus>>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IValidator<AddProductModel>, AddProductModelValidator>();
+builder.Services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
