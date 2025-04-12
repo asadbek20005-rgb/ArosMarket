@@ -10,7 +10,7 @@ public class BaseRepository<TEntity>(ArosMarketDbContext context)
 {
     private readonly ArosMarketDbContext _context = context;
 
-    public async Task AddAsync(TEntity entity)
+    public virtual async Task AddAsync(TEntity entity)
     {
         await _context.Set<TEntity>().AddAsync(entity);
     }

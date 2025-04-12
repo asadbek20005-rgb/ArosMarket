@@ -1,29 +1,70 @@
 ﻿
+using ArosMarket.Core.Domain.Entites;
 using ArosMarket.Core.Domain.RepositoryContracts;
 using ArosMarket.Core.Domain.RepositoryContracts.BaseContracts;
 using ArosMarket.Infrastructure.DbContext;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace ArosMarket.Infrastructure.Repositories;
 
-public class UnitOfWOrk<TEntity>(ArosMarketDbContext arosMarketDbContext) : IUnitOfWork<TEntity> where TEntity : class, IDisposable
+public class UnitOfWOrk(ArosMarketDbContext arosMarketDbContext) : IUnitOfWork
 {
     private readonly ArosMarketDbContext _context = arosMarketDbContext;
-    private IBaseRepository<TEntity>? _repository;
-    public IBaseRepository<TEntity> Repository
+    private IBaseRepository<Content>? _contentRepository;
+    private IBaseRepository<Product>? _productRepository;
+    private IBaseRepository<ProductType>? _productTypeRepository;
+    private IBaseRepository<ProductStatus>? _productStatusRepository;
+    public IBaseRepository<Content> ContentRepository
     {
         get
         {
-            if (_repository == null)
+            if (_contentRepository is null)
             {
-                _repository = new BaseRepository<TEntity>(_context);
+                _contentRepository = new BaseRepository<Content>(_context);
             }
-            return _repository;
+            return _contentRepository;
         }
     }
 
-    public async Task BeginTransactionAsync()
+    public IBaseRepository<Product> ProductRepository
     {
-        await _context.Database.BeginTransactionAsync();
+        get
+        {
+            if (_productRepository is null)
+            {
+                _productRepository = new BaseRepository<Product>(_context);
+            }
+            return _productRepository;
+        }
+    }
+
+    public IBaseRepository<ProductType> ProductTypeRepository
+    {
+        get
+        {
+            if (_productTypeRepository is null)
+            {
+                _productTypeRepository = new BaseRepository<ProductType>(_context);
+            }
+            return _productTypeRepository;
+        }
+    }
+
+    public IBaseRepository<ProductStatus> ProductStatusRepository
+    {
+        get
+        {
+            if (_productStatusRepository is null)
+            {
+                _productStatusRepository = new BaseRepository<ProductStatus>(_context);
+            }
+            return _productStatusRepository;
+        }
+    }
+
+    public Task<IDbContextTransaction> BeginTransactionAsync()
+    {
+       return _context.Database.BeginTransactionAsync();
     }
 
     public async Task CommitAsync()

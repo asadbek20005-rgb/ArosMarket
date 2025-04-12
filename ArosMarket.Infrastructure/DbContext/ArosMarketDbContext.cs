@@ -12,5 +12,10 @@ public class ArosMarketDbContext : Microsoft.EntityFrameworkCore.DbContext
     }
 
     public DbSet<Content> Contents { get; set; }
+    public DbSet<Product> Products { get; set; }
+
+    public DbSet<ProductType> ProductTypes { get; set; }
+    public DbSet<ProductStatus> ProductStatuses { get; set; }
+
 
 }

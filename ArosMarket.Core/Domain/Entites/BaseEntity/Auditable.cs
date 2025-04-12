@@ -7,6 +7,6 @@ public class Auditable
 {
     [Column("created_date")]
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-    [Column("created_date")]
+    [Column("updated_date")]
     public DateTime UpdatedDate { get; set; }
 }

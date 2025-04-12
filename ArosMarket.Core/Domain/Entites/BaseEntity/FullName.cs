@@ -7,7 +7,7 @@ public class FullName
 {
     [Required]
     [Column("first_name")]
-    [StringLength(30)]
+    [StringLength(90)]
     public string FirstName { get; set; }
 
     [Column("last_name")]

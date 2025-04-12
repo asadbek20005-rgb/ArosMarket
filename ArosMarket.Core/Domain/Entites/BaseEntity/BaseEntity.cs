@@ -12,7 +12,7 @@ public class BaseEntity
 
     [Required]
     [Column("full_name")]
-    [StringLength(30)]
+    [StringLength(90)]
     public string FullName { get; set; }
 
     [Required]
@@ -26,6 +26,6 @@ public class BaseEntity
     public string Code { get; set; }
     [Column("created_date")]
     public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
-    [Column("created_date")]
-    public DateTime UpdatedDate { get; set; }
+    [Column("updated_date")]
+    public DateTime? UpdatedDate { get; set; }
 }

@@ -5,7 +5,7 @@ namespace ArosMarket.Core.Models.ProductModels;
 public class AddProductModel
 {
     [Required]
-    [StringLength(30)]
+    [StringLength(90)]
     public string FullName { get; set; }
 
     [Required]
@@ -31,7 +31,7 @@ public class AddProductModel
     [Required]
     public int ProductTypeId { get; set; }
 
-
+    
     [Required]
     public int ProductStatusId { get; set; }
 }
