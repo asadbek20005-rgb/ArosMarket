@@ -1,4 +1,5 @@
-﻿using ArosMarket.Core.Domain.Entites;
+﻿using ArosMarket.Core.Commands;
+using ArosMarket.Core.Domain.Entites;
 using ArosMarket.Core.Domain.RepositoryContracts;
 using ArosMarket.Core.Models.ProductModels;
 using FluentValidation;
@@ -6,7 +7,7 @@ using Mapster;
 using MediatR;
 using StatusGeneric;
 
-namespace ArosMarket.Core.Commands.Handlers;
+namespace ArosMarket.Core.Handlers;
 
 public class CreateProductHandler(IUnitOfWork unitOfWork, IValidator<AddProductModel> validator) : StatusGenericHandler, IRequestHandler<CreateProductCommand>
 {

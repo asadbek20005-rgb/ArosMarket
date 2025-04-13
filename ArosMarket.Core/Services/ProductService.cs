@@ -1,6 +1,7 @@
 ﻿using ArosMarket.Core.Commands;
 using ArosMarket.Core.Dtos;
 using ArosMarket.Core.Models.ProductModels;
+using ArosMarket.Core.Queries;
 using ArosMarket.Core.ServiceContracts;
 using MediatR;
 using StatusGeneric;
@@ -23,9 +24,15 @@ public class ProductService(IMediator mediator) : StatusGenericHandler, IProduct
         throw new NotImplementedException();
     }
 
-    public Task<List<ProductDto>> GetAll()
+    public async Task<List<ProductDto>> GetAll()
     {
-        throw new NotImplementedException();
+        var query = new ReadProductsQuery();
+        var products = await _mediator.Send(query);
+        if (products is null || products.Count() == 0)
+        {
+            return new List<ProductDto>();
+        }
+        return products;
     }
 
     public Task<ProductDto> GetById(int id)

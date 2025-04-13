@@ -22,4 +22,17 @@ public class TestsController(IProductService productService) : ControllerBase
         return BadRequest(ModelState);
     }
 
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllProducts()
+    {
+        var products = await _productService.GetAll();
+        if (_productService.IsValid)
+        {
+            return Ok(products);
+        }
+        _productService.CopyToModelState(ModelState);
+        return BadRequest(ModelState);
+    }
+
 }
